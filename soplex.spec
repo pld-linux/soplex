@@ -112,6 +112,9 @@ rm -rf $RPM_BUILD_ROOT
 	INSTALLDIR=$RPM_BUILD_ROOT%{_prefix} \
 	INCLUDEDIR=include/soplex
 
+# omitted in installheader target, but required by soplex.h
+cp -p src/{array,dataarray,datahashtable,datakey,dataset,exceptions,idlist,islist,lpcol,random,slinsolver,spxalloc,spxpricer,spxratiotester,spxsimplifier}.h $RPM_BUILD_ROOT%{_includedir}/soplex
+
 install -D bin/soplex $RPM_BUILD_ROOT%{_bindir}/soplex
 install -D lib/libsoplex-%{version}.linux.*.so $RPM_BUILD_ROOT%{_libdir}/libsoplex.so.%{version}
 ln -sf libsoplex.so.%{version} $RPM_BUILD_ROOT%{_libdir}/libsoplex.so.1
