@@ -2,7 +2,7 @@
 # Conditional build:
 %bcond_without	apidocs		# API documentation
 %bcond_without	static_libs	# static library
-#
+
 Summary:	SoPlex - the Sequential object-oriented simPlex
 Summary(pl.UTF-8):	SoPlex - sekwencyjna, zorientowana obiektowo metoda simplex
 Name:		soplex
@@ -115,12 +115,12 @@ rm -rf $RPM_BUILD_ROOT
 # omitted in installheader target, but required by soplex.h
 cp -p src/{array,dataarray,datahashtable,datakey,dataset,exceptions,idlist,islist,lpcol,random,slinsolver,spxalloc,spxpricer,spxratiotester,spxsimplifier}.h $RPM_BUILD_ROOT%{_includedir}/soplex
 
-install -D bin/soplex $RPM_BUILD_ROOT%{_bindir}/soplex
-install -D lib/libsoplex-%{version}.linux.*.so $RPM_BUILD_ROOT%{_libdir}/libsoplex.so.%{version}
+install -Dp bin/soplex $RPM_BUILD_ROOT%{_bindir}/soplex
+install -Dp lib/libsoplex-%{version}.linux.*.so $RPM_BUILD_ROOT%{_libdir}/libsoplex.so.%{version}
 ln -sf libsoplex.so.%{version} $RPM_BUILD_ROOT%{_libdir}/libsoplex.so.1
 ln -sf libsoplex.so.%{version} $RPM_BUILD_ROOT%{_libdir}/libsoplex.so
 %if %{with static_libs}
-install -D lib/libsoplex-%{version}.linux.*.a $RPM_BUILD_ROOT%{_libdir}/libsoplex.a
+install -Dp lib/libsoplex-%{version}.linux.*.a $RPM_BUILD_ROOT%{_libdir}/libsoplex.a
 %endif
 
 %clean
