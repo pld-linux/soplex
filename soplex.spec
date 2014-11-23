@@ -6,13 +6,13 @@
 Summary:	SoPlex - the Sequential object-oriented simPlex
 Summary(pl.UTF-8):	SoPlex - sekwencyjna, zorientowana obiektowo metoda simplex
 Name:		soplex
-Version:	1.7.2
+Version:	2.0.0
 Release:	1
 License:	ZIB Academic License (free for academic use) or commercial
 Group:		Libraries
-#Source0Download: http://soplex.zib.de/download.shtml
-Source0:	http://soplex.zib.de/download/%{name}-%{version}.tgz
-# NoSource0-md5:	8a4d3022286c2eced23613d435c9cd7f
+#Source0Download: http://soplex.zib.de/#download
+Source0:	http://soplex.zib.de/download/release/%{name}-%{version}.tgz
+# NoSource0-md5:	dd7098b9c24bb980cc2e90f396730f25
 # Cannot freely distribute sources or binaries according to license, 3c:
 # "You must keep track of access to the Program (e.g., similar to the
 #  registration procedure at ZIB)."
